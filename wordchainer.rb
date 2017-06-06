@@ -32,8 +32,11 @@ class WordChainer
       end
     end
 
-    print new_current_words
     @current_words = new_current_words
+
+    new_current_words.each do |key|
+      print "key: #{key}\n"
+    end
   end
 
   def adjacent_words(word)
@@ -58,5 +61,5 @@ end
 
 if __FILE__ == $PROGRAM_NAME
   start = WordChainer.new('dictionary.txt')
-  start.run("duck", "ruby")
+  start.run("market", "ruby")
 end
