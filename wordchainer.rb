@@ -27,7 +27,7 @@ class WordChainer
       print new_current_words
       @current_words = new_current_words
     end
-    p "@all_seen_words: #{@all_seen_words}"
+    
   end
 
   def adjacent_words(word)
