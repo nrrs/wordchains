@@ -18,6 +18,8 @@ class WordChainer
       explore_current_words
     end
 
+    p "==="
+    p build_path(target)
   end
 
   def explore_current_words
@@ -56,10 +58,21 @@ class WordChainer
     adjacent_words
   end
 
+  def build_path(target)
+    path = []
+    current_word = target
+    until current_word.nil?
+      path << current_word
+      current_word = @all_seen_words[current_word]
+    end
+
+    path.reverse
+  end
+
 end
 
 
 if __FILE__ == $PROGRAM_NAME
   start = WordChainer.new('dictionary.txt')
-  start.run("market", "ruby")
+  start.run("duck", "ruby")
 end
